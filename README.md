@@ -13,6 +13,7 @@ nicobun
 
 
 ■ ファイル
+----
 ファイル中の&lt;Your-S3-bucket&gt;, &lt;Your-Access-Key-ID&gt;, &lt;Your-Secret-Access-Key&gt;を環境に合わせて変更のこと。
 
 - videojson2tsv.rb: ニコニコ動画の動画データにsmidを付与し、tsv(タブ区切り)フォーマットに変更

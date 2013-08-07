@@ -5,20 +5,18 @@ require 'zlib'
 require 'nkf'
 opt = "-w -h -Z1"
 
-video_dir = "."
-tag_dir = "."
-
 ARGV.each{|filename|
+  video_dir = "."
+  tag_dir = "."
   Zlib::GzipReader.open(filename) do |gz|
-    video_file = Zlib::GzipWriter.open(video_dir + "/" + File.basename(filename, ".dat.gz") + "video_sampling100.tsv.gz")
-    tag_file = Zlib::GzipWriter.open(tag_dir + "/" + File.basename(filename, ".dat.gz") + "tags_sampling100.tsv.gz")
+    video_file = Zlib::GzipWriter.open(video_dir + "/" + File.basename(filename, ".dat.gz") + "video.tsv.gz")
+    tag_file = Zlib::GzipWriter.open(tag_dir + "/" + File.basename(filename, ".dat.gz") + "tags.tsv.gz")
     while line = gz.gets
 
       line = NKF.nkf(opt, line)
       line.gsub!(/\t/, "\\t")
       row = JSON.parse(line)
 
-      next unless /00$/ === row["video_id"]
       video_file.puts [ row["video_id"], row["thread_id"], row["title"], row["description"], row["thumbnail_url"], row["upload_time"], row["length"], row["movie_type"], row["size_high"], row["size_low"], row["view_counter"], row["comment_counter"], row["mylist_counter"], row["last_res_body"] ].join("\t")
 
       row["tags"].each{|tag|

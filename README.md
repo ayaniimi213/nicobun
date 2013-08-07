@@ -13,6 +13,8 @@ nicobun
 
 
 ■ ファイル
+ファイル中の&lt;Your-S3-bucket&gt;, &lt;Your-Access-Key-ID&gt;, &lt;Your-Secret-Access-Key&gt;を環境に合わせて変更のこと。
+
 - videojson2tsv.rb: ニコニコ動画の動画データにsmidを付与し、tsv(タブ区切り)フォーマットに変更
 - videoson2tsv_sampling100.rb: smidの下2桁が00のみにvideojson2tsv.rbと同じ処理を行う
-- create-redshift.sql: tsvファイルを読み込んで、Amazon Redshift上にデータベースを構築する。<Your-S3-bucket>, <Your-Access-Key-ID>, <Your-Secret-Access-Key>を環境に合わせて変更のこと。
+- create-redshift.sql: tsvファイルを読み込んで、Amazon Redshift上にデータベースを構築する。

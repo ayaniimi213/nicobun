@@ -3,7 +3,6 @@
 require 'json'
 require 'zlib'
 require 'nkf'
-opt = "-w"
 
 thread_dir = "."
 
@@ -13,13 +12,16 @@ ARGV.each{|filename|
     video_id = File.basename(filename, ".dat")
     while line = dat.gets
       
-      line = NKF.nkf(opt, line)
+      line.chomp!
       row = JSON.parse(line)
       comment = row["comment"]
       comment.gsub!(/\t/, "\\t")
       comment.gsub!(/\n/, "\\n")
-      
-      thread_file.puts [ video_id, row["date"], row["no"], row["vpos"], comment, row["command"] ].join("\t")
+      command = row["command"]
+      command.gsub!(/\t/, "\\t")
+      command.gsub!(/\n/, "\\n")
+
+      thread_file.puts [ row["date"], row["no"], row["vpos"], comment, command, video_id ].join("\t")
       
     end
     thread_file.close

@@ -22,12 +22,12 @@ create table tag_data (
        lock integer);
 
 create table comment_data (
-       video_id varchar(10) not null distkey sortkey,
        date integer,
        no integer,
        vpos integer,
        comment varchar(65535),
-       command varchar(65535));
+       command varchar(65535),
+       video_id varchar(10) not null distkey sortkey);
 
 copy videoinfo from '<Your-S3-bucket>/videoinfo_tsv' CREDENTIALS 'aws_access_key_id=<Your-Access-Key-ID>;aws_secret_access_key=<Your-Secret-Access-Key>' delimiter '\t' GZIP;
 
@@ -95,6 +95,16 @@ create table tag_data_sampling0000 (
        category integer,
        lock integer);
 
-copy videoinfo from '<Your-S3-bucket>/videoinfo_tsv/0000video.tsv.gz' CREDENTIALS 'aws_access_key_id=<Your-Access-Key-ID>;aws_secret_access_key=<Your-Secret-Access-Key>' delimiter '\t' GZIP;
+create table comment_data_sampling0000 (
+       date integer,
+       no integer,
+       vpos integer,
+       comment varchar(65535),
+       command varchar(65535),
+       video_id varchar(10) not null distkey sortkey);
 
-copy tag_data from '<Your-S3-bucket>/tag_data_tsv/0000tags.tsv.gz' CREDENTIALS 'aws_access_key_id=<Your-Access-Key-ID>;aws_secret_access_key=<Your-Secret-Access-Key>' delimiter '\t' GZIP;
+copy videoinfo_sampling0000 from '<Your-S3-bucket>/videoinfo_tsv/0000video.tsv.gz' CREDENTIALS 'aws_access_key_id=<Your-Access-Key-ID>;aws_secret_access_key=<Your-Secret-Access-Key>' delimiter '\t' GZIP;
+
+copy tag_data_sampling0000 from '<Your-S3-bucket>/tag_data_tsv/0000tags.tsv.gz' CREDENTIALS 'aws_access_key_id=<Your-Access-Key-ID>;aws_secret_access_key=<Your-Secret-Access-Key>' delimiter '\t' GZIP;
+
+copy comment_data_sampling0000 from '<Your-S3-bucket>/comment_data_tsv/0000' CREDENTIALS 'aws_access_key_id=<Your-Access-Key-ID>;aws_secret_access_key=<Your-Secret-Access-Key>' delimiter '\t' GZIP;

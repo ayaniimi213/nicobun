@@ -14,10 +14,12 @@ ARGV.each{|filename|
     while line = dat.gets
       
       line = NKF.nkf(opt, line)
-      line.gsub!(/\t/, "\\t")
       row = JSON.parse(line)
-
-      thread_file.puts [ video_id, row["date"], row["no"], row["vpos"], row["comment"], row["command"] ].join("\t")
+      comment = row["comment"]
+      comment.gsub!(/\t/, "\\t")
+      comment.gsub!(/\n/, "\\n")
+      
+      thread_file.puts [ video_id, row["date"], row["no"], row["vpos"], comment, row["command"] ].join("\t")
       
     end
     thread_file.close

@@ -2,14 +2,14 @@
 
 require 'json'
 require 'zlib'
-require 'nkf'
 
 thread_dir = "."
 
 ARGV.each{|filename|
   File.open(filename) do |dat|
-    thread_file = Zlib::GzipWriter.open(thread_dir + "/" + File.basename(filename, ".dat") + "thread.tsv.gz")
     video_id = File.basename(filename, ".dat")
+
+    thread_file = Zlib::GzipWriter.open(thread_dir + "/" + File.basename(filename, ".dat") + "thread.tsv.gz")
     while line = dat.gets
       
       line.chomp!

@@ -19,6 +19,8 @@ nicobun
 
 - videojson2tsv.rb: ニコニコ動画の動画データにsmidを付与し、tsv(タブ区切り)フォーマットに変更
 - videoson2tsv_sampling100.rb: smidの下位2桁が00のみにvideojson2tsv.rbと同じ処理を行う
+- threadjson2tsv.rb: ニコニコ動画のコメントデータにsmidを付与し、tsv(タブ区切り)フォーマットに変更
+- threadjson2tsv_sampling100.rb: smidの下位2桁が00のみにthreadjson2tsv.rbと同じ処理を行う
 - create-redshift.sql: tsvファイルを読み込んで、Amazon Redshift上にデータベースを構築する。
 
 ■ 処理の流れ

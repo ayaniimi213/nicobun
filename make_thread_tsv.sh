@@ -11,6 +11,7 @@ for TARGET in ${TARGET_ARRAY[@]}; do
 		mkdir ${THREAD_TSV}/${TARGET}
 		cd ${THREAD_TSV}/${TARGET}
 		ruby ${HOME}/nicobun/threadjson2tsv.rb ${THREAD_SRC}/${TARGET}/*.dat
+		rm -fR ${THREAD_SRC}/${TARGET}
 	fi
 done
 

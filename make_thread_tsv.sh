@@ -13,3 +13,5 @@ for TARGET in ${TARGET_ARRAY[@]}; do
 		ruby ${HOME}/nicobun/threadjson2tsv.rb ${THREAD_SRC}/${TARGET}/*.dat
 	fi
 done
+
+s3cmd put -r ${THREAD_TSV}/* <Your-S3-bucket>/comment_data_tsv/

@@ -66,11 +66,11 @@ create table comment_data_sampling100 (
        comment varchar(65535),
        command varchar(65535));
 
-copy videoinfo from '<Your-S3-bucket>/videoinfo_tsv_sampling100' CREDENTIALS 'aws_access_key_id=<Your-Access-Key-ID>;aws_secret_access_key=<Your-Secret-Access-Key>' delimiter '\t' GZIP;
+copy videoinfo_sampling100 from '<Your-S3-bucket>/videoinfo_tsv_sampling100' CREDENTIALS 'aws_access_key_id=<Your-Access-Key-ID>;aws_secret_access_key=<Your-Secret-Access-Key>' delimiter '\t' GZIP;
 
-copy tag_data from '<Your-S3-bucket>/tag_data_tsv_sampling100' CREDENTIALS 'aws_access_key_id=<Your-Access-Key-ID>;aws_secret_access_key=<Your-Secret-Access-Key>' delimiter '\t' GZIP;
+copy tag_data_sampling100 from '<Your-S3-bucket>/tag_data_tsv_sampling100' CREDENTIALS 'aws_access_key_id=<Your-Access-Key-ID>;aws_secret_access_key=<Your-Secret-Access-Key>' delimiter '\t' GZIP;
 
-copy comment_data from '<Your-S3-bucket>/comment_data_tsv_sampling100' CREDENTIALS 'aws_access_key_id=<Your-Access-Key-ID>;aws_secret_access_key=<Your-Secret-Access-Key>' delimiter '\t' GZIP;
+copy comment_data_sampling100 from '<Your-S3-bucket>/comment_data_tsv_sampling100' CREDENTIALS 'aws_access_key_id=<Your-Access-Key-ID>;aws_secret_access_key=<Your-Secret-Access-Key>' delimiter '\t' GZIP;
 
 --- sampling0000 dataset
 create table videoinfo_sampling0000 (

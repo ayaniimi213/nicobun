@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+#!/bin/env ruby
 
 require 'json'
 require 'zlib'
@@ -12,7 +12,6 @@ ARGV.each{|filename|
     thread_file = Zlib::GzipWriter.open(thread_dir + "/" + File.basename(filename, ".dat") + "thread.tsv.gz")
     while line = dat.gets
       
-      line.chomp!
       row = JSON.parse(line)
       comment = row["comment"]
       comment.gsub!(/\t/, "\\t")

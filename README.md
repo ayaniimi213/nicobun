@@ -55,45 +55,45 @@ Redshiftでは、4MB以上のJSONファイルを読み込めないので、smid�
 NNNN (4桁の数値) は、各動画の ID である "sm数字" や "nm数字" の数字部分を8桁に0埋めした、先頭の4桁部分です。
 
 
-* 全数(およそ 8,400,000)
-** videoinfo: 動画情報
-** table tag_data: タグ情報
-** comment_data: コメント情報
+- 全数(およそ 8,400,000)
+ - videoinfo: 動画情報
+ - table tag_data: タグ情報
+ - comment_data: コメント情報
 
-* 10分の一サンプリング(およそ 910,000)
-** videoinfo_sampling10: 動画情報(video_idの最後が0のもののみ)
-** table tag_data_sampling10: タグ情報(video_idの最後が0のもののみ)
-** comment_data_sampling10: コメント情報(video_idの最後が0のもののみ)
+- 10分の一サンプリング(およそ 910,000)
+ - videoinfo_sampling10: 動画情報(video_idの最後が0のもののみ)
+ - table tag_data_sampling10: タグ情報(video_idの最後が0のもののみ)
+ - comment_data_sampling10: コメント情報(video_idの最後が0のもののみ)
 
-* 100分の一サンプリング(およそ 160,000)
-** videoinfo_sampling100: 動画情報(video_idの最後が00のもののみ)
-** table tag_data_sampling100: タグ情報(video_idの最後が00のもののみ)
-** comment_data_sampling100: コメント情報(video_idの最後が00のもののみ)
+- 100分の一サンプリング(およそ 160,000)
+ - videoinfo_sampling100: 動画情報(video_idの最後が00のもののみ)
+ - table tag_data_sampling100: タグ情報(video_idの最後が00のもののみ)
+ - comment_data_sampling100: コメント情報(video_idの最後が00のもののみ)
 
-* 2000分の一サンプリング(およそ 1,800)
-** videoinfo_sampling0000: 動画情報(NNNNが0000のもののみ)
-** table tag_data_sampling0000: タグ情報(NNNNが0000のもののみ)
-** comment_data_sampling0000: コメント情報(NNNNが0000のもののみ)
+- 2000分の一サンプリング(およそ 1,800)
+ - videoinfo_sampling0000: 動画情報(NNNNが0000のもののみ)
+ - table tag_data_sampling0000: タグ情報(NNNNが0000のもののみ)
+ - comment_data_sampling0000: コメント情報(NNNNが0000のもののみ)
 
-* コメント分割
-,テーブル, NNNN
-,comment_data00, 0000-0099
-,comment_data01, 0100-0199
-,comment_data02, 0200-0299
-,comment_data03, 0300-0399
-,comment_data04, 0400-0499
-,comment_data05, 0500-0599
-,comment_data06, 0600-0699
-,comment_data07, 0700-0799
-,comment_data08, 0800-0899
-,comment_data09, 0900-0999
-,comment_data10, 1000-1099
-,comment_data11, 1100-1199
-,comment_data12, 1200-1299
-,comment_data13, 1300-1399
-,comment_data14, 1400-1499
-,comment_data15, 1500-1599
-,comment_data16, 1600-1699
-,comment_data17, 1700-1799
-,comment_data18, 1800-1899
-,comment_data19, 1900-1925
+- コメント分割
+ - テーブル, NNNN
+ - comment_data00, 0000-0099
+ - comment_data01, 0100-0199
+ - comment_data02, 0200-0299
+ - comment_data03, 0300-0399
+ - comment_data04, 0400-0499
+ - comment_data05, 0500-0599
+ - comment_data06, 0600-0699
+ - comment_data07, 0700-0799
+ - comment_data08, 0800-0899
+ - comment_data09, 0900-0999
+ - comment_data10, 1000-1099
+ - comment_data11, 1100-1199
+ - comment_data12, 1200-1299
+ - comment_data13, 1300-1399
+ - comment_data14, 1400-1499
+ - comment_data15, 1500-1599
+ - comment_data16, 1600-1699
+ - comment_data17, 1700-1799
+ - comment_data18, 1800-1899
+ - comment_data19, 1900-1925

@@ -33,4 +33,4 @@ copy videoinfo_sampling0000 from '<Your-S3-bucket>/videoinfo_tsv/0000video.tsv.g
 
 copy tag_data_sampling0000 from '<Your-S3-bucket>/tag_data_tsv/0000tags.tsv.gz' CREDENTIALS 'aws_access_key_id=<Your-Access-Key-ID>;aws_secret_access_key=<Your-Secret-Access-Key>' delimiter '\t' GZIP;
 
-copy comment_data_sampling0000 from '<Your-S3-bucket>/comment_data_tsv/0000' CREDENTIALS 'aws_access_key_id=<Your-Access-Key-ID>;aws_secret_access_key=<Your-Secret-Access-Key>' delimiter '\t' GZIP;
+copy comment_data_sampling0000 from '<Your-S3-bucket>/nicocomm/comment_data_json/0000' CREDENTIALS 'aws_access_key_id=<Your-Access-Key-ID>;aws_secret_access_key=<Your-Secret-Access-Key>' json 'auto' MAXERROR 10000 ACCEPTINVCHARS GZIP;"
